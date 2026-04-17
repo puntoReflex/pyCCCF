@@ -25,4 +25,14 @@ public class Cola {
         throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
     }
 
+    public int obtenerMinutosSinClientes() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerMinutosSinClientes'");
+    }
+
+    public int obtenerCantidadPersonasEnCola() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerCantidadPersonasEnCola'");
+    }
+
 }

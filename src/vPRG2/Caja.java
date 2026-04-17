@@ -24,4 +24,14 @@ public class Caja {
         throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
     }
 
+    public int obtenerPersonasAtendidas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerPersonasAtendidas'");
+    }
+
+    public int obtenerItemsVendidos() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerItemsVendidos'");
+    }
+
 }

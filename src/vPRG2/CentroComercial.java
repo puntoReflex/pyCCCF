@@ -33,18 +33,47 @@ public class CentroComercial {
     }
 
     private void mostrarResumen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarResumen'");
+        int minutosSinClientes = cola.obtenerMinutosSinClientes();
+        int personasEnCola = cola.obtenerCantidadPersonasEnCola();
+        int personasAtendidas = this.obtenerPersonasAtendidas();
+        int itemsVendidos = this.obtenerItemsVendidos();
+
+        console.writeln("Personas atendidas: " + personasAtendidas);
+        console.writeln("Personas en cola al cierre: " + personasEnCola);
+        console.writeln("Items vendidos: " + itemsVendidos);
+        console.writeln("Minutos sin clientes en cola: " + minutosSinClientes);
+    }
+
+    private int obtenerPersonasAtendidas(){
+        int totalItems=0;
+        for(int numeroCaja=0; numeroCaja<cajas.length; numeroCaja++){
+            totalItems= totalItems + cajas[numeroCaja].obtenerPersonasAtendidas();
+        }
+        return totalItems;
+    }
+
+    private int obtenerItemsVendidos(){
+        int totalItems=0;
+        for(int numeroCaja=0; numeroCaja<cajas.length; numeroCaja++){
+            totalItems = totalItems + cajas[numeroCaja].obtenerItemsVendidos();
+        }
+        return totalItems;
     }
 
     private void pausar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pausar'");
+        console.pause(5);
     }
 
     private void mostrarEstado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarEstado'");
+        tiempo.mostrar(llegaClienteEsteMinuto);
+        cola.mostrar();
+        this.mostrarCajas();
+    }
+
+    private void mostrarCajas(){
+        for(int numeroCaja=0; numeroCaja<cajas.length; numeroCaja++){
+            cajas[numeroCaja].mostrar();
+        }
     }
 
     private void procesarAtencionCajas() {
