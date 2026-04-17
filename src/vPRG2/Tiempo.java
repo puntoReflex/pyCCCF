@@ -10,4 +10,9 @@ public class Tiempo {
         throw new UnsupportedOperationException("Unimplemented method 'haFinalizado'");
     }
 
+    public void mostrar(boolean llegaClienteEsteMinuto) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+    }
+
 }

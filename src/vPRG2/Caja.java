@@ -19,4 +19,9 @@ public class Caja {
         throw new UnsupportedOperationException("Unimplemented method 'avanzarAtencion'");
     }
 
+    public void mostrar() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+    }
+
 }
