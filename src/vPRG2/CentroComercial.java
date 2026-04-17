@@ -5,6 +5,7 @@ public class CentroComercial {
     private Tiempo tiempo;
     private boolean llegaClienteEsteMinuto;
     private Console console;
+    final private double PROBABILIDAD_LLEGADA = 0.4;
 
     public CentroComercial() {
         console = new Console();
@@ -26,7 +27,7 @@ public class CentroComercial {
             this.procesarAtencionCajas();
             this.mostrarEstado();
             this.pausar();
-        } while(!tiempo.haFinalizado());
+        } while (!tiempo.haFinalizado());
 
         this.mostrarResumen();
     }
@@ -57,7 +58,11 @@ public class CentroComercial {
     }
 
     private void procesarLlegadaCliente() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'procesarLlegadaCliente'");
+        llegaClienteEsteMinuto = Math.random() <= PROBABILIDAD_LLEGADA;
+
+        if (llegaClienteEsteMinuto) {
+            cola.añadirCliente(new Cliente());
+        }
+
     }
 }
