@@ -10,4 +10,14 @@ public class Cola {
         throw new UnsupportedOperationException("Unimplemented method 'añadirCliente'");
     }
 
+    public boolean hayClientes() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'hayClientes'");
+    }
+
+    public Cliente quitarCliente() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'quitarCliente'");
+    }
+
 }

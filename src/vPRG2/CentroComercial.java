@@ -53,8 +53,12 @@ public class CentroComercial {
     }
 
     private void asignarClientesACajas() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'asignarClientesACajas'");
+        for(int numeroCaja=0; numeroCaja<cajas.length; numeroCaja++){
+            if (cajas[numeroCaja].estaLibre() && cola.hayClientes()){
+                Cliente cliente = cola.quitarCliente();
+                cajas[numeroCaja].asignar(cliente);
+            }
+        }
     }
 
     private void procesarLlegadaCliente() {
