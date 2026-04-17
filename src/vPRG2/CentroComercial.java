@@ -48,8 +48,9 @@ public class CentroComercial {
     }
 
     private void procesarAtencionCajas() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'procesarAtencionCajas'");
+        for(int numeroCaja=0; numeroCaja<cajas.length; numeroCaja++){
+            cajas[numeroCaja].avanzarAtencion();
+        }
     }
 
     private void asignarClientesACajas() {

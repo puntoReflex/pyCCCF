@@ -14,4 +14,9 @@ public class Caja {
         throw new UnsupportedOperationException("Unimplemented method 'asignarCliente'");
     }
 
+    public void avanzarAtencion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'avanzarAtencion'");
+    }
+
 }
