@@ -1,37 +1,51 @@
 public class Caja {
 
-    public Caja(int i) {
-        //TODO Auto-generated constructor stub
+    private int numero;
+    private Cliente cliente;
+    private int itemsVendidos;
+    private int personasAtendidas;
+    private int itemsRestantes;
+    private Console console;
+
+    public Caja(int numero) {
+        this.numero = numero;
+        itemsVendidos = 0;
+        personasAtendidas = 0;
+        itemsRestantes = 0;
+        console = new Console();
     }
 
     public boolean estaLibre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'estaLibre'");
+        return cliente == null;
     }
 
     public void asignar(Cliente cliente) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'asignarCliente'");
+        this.cliente = cliente;
+        itemsRestantes = cliente.obtenerItems();
     }
 
     public void avanzarAtencion() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'avanzarAtencion'");
+        if (!this.estaLibre()) {
+            itemsRestantes = itemsRestantes - 1;
+            if (itemsRestantes == 0) {
+                personasAtendidas = personasAtendidas + 1;
+                itemsVendidos = itemsVendidos + cliente.obtenerItems();
+                cliente = null;
+            }
+        }
     }
 
     public void mostrar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+        console.write("Caja ["+numero+"] ");
+        console.writeln("[:]".repeat(itemsRestantes));
     }
 
     public int obtenerPersonasAtendidas() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'obtenerPersonasAtendidas'");
+        return personasAtendidas;
     }
 
     public int obtenerItemsVendidos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'obtenerItemsVendidos'");
+        return itemsVendidos;
     }
 
 }

@@ -4,8 +4,8 @@ public class CentroComercial {
     private Caja[] cajas;
     private Tiempo tiempo;
     private boolean llegaClienteEsteMinuto;
-    private Console console;
     final private double PROBABILIDAD_LLEGADA = 0.4;
+    private Console console;
 
     public CentroComercial() {
         console = new Console();
@@ -18,7 +18,6 @@ public class CentroComercial {
     }
 
     public void simular() {
-
         do {
             tiempo.avanzar();
             this.procesarLlegadaCliente();
@@ -28,7 +27,6 @@ public class CentroComercial {
             this.mostrarEstado();
             this.pausar();
         } while (!tiempo.haFinalizado());
-
         this.mostrarResumen();
     }
 
@@ -61,10 +59,11 @@ public class CentroComercial {
     }
 
     private void pausar() {
-        console.pause(5);
+        console.pause(1);
     }
 
     private void mostrarEstado() {
+        console.cleanScreen();
         tiempo.mostrar(llegaClienteEsteMinuto);
         cola.mostrar();
         this.mostrarCajas();
@@ -93,10 +92,9 @@ public class CentroComercial {
 
     private void procesarLlegadaCliente() {
         llegaClienteEsteMinuto = Math.random() <= PROBABILIDAD_LLEGADA;
-
         if (llegaClienteEsteMinuto) {
-            cola.añadirCliente(new Cliente());
+            Cliente cliente = new Cliente();
+            cola.añadirCliente(cliente);
         }
-
     }
 }
