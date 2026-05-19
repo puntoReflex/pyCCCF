@@ -39,8 +39,10 @@ public class Cola {
     }
 
     public void mostrar() {
-        final String PERSONA = "_O/";
-        console.writeln(PERSONA.repeat(tamaño));
+        for(int i=0;i<tamaño;i++){
+            clientes[i].mostrar();
+        }
+        console.writeln();
     }
 
     public int obtenerMinutosSinClientes() {
@@ -49,6 +51,10 @@ public class Cola {
 
     public int obtenerCantidadPersonasEnCola() {
         return tamaño;
+    }
+
+    public Cliente primero() {
+        return clientes[0];
     }
 
 }

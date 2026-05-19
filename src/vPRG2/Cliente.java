@@ -1,9 +1,11 @@
 public class Cliente {
 
     private int items;
+    private Console console;
 
     public Cliente() {
         items = this.generarItems();
+        console = new Console();
     }
 
     private int generarItems() {
@@ -14,5 +16,9 @@ public class Cliente {
 
     public int obtenerItems() {
         return items;
+    }
+
+    public void mostrar() {
+        console.write("[" + items + "]_O/");
     }
 }

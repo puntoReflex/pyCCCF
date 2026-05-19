@@ -10,10 +10,12 @@ public class CentroComercial {
     public CentroComercial() {
         console = new Console();
         cola = new Cola();
-        cajas = new Caja[4];
+        cajas = new Caja[5];
         for (int i = 0; i < cajas.length; i++) {
             cajas[i] = new Caja(i + 1);
         }
+        cajas[0] = new CajaExpress(1);
+        cajas[4] = new CajaExpress(5);
         tiempo = new Tiempo();
     }
 
@@ -83,7 +85,9 @@ public class CentroComercial {
 
     private void asignarClientesACajas() {
         for(int numeroCaja=0; numeroCaja<cajas.length; numeroCaja++){
-            if (cajas[numeroCaja].estaLibre() && cola.hayClientes()){
+            if (cajas[numeroCaja].estaLibre() 
+                && cola.hayClientes()
+                && cajas[numeroCaja].puedeAtender(cola.primero())){
                 Cliente cliente = cola.quitarCliente();
                 cajas[numeroCaja].asignar(cliente);
             }

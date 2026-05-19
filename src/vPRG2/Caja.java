@@ -1,10 +1,10 @@
 public class Caja {
 
-    private int numero;
+    protected int numero;
     private Cliente cliente;
     private int itemsVendidos;
     private int personasAtendidas;
-    private int itemsRestantes;
+    protected int itemsRestantes;
     private Console console;
 
     public Caja(int numero) {
@@ -46,6 +46,10 @@ public class Caja {
 
     public int obtenerItemsVendidos() {
         return itemsVendidos;
+    }
+
+    public boolean puedeAtender(Cliente cliente){
+        return true;
     }
 
 }
